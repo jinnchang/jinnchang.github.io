@@ -1,0 +1,73 @@
+.code-block {
+  position: relative;
+}
+
+.code-block > .copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+
+  color: currentColor;
+  opacity: 0.5;
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+
+.code-block:hover > .copy-button,
+.code-block > .copy-button:focus,
+.code-block > .copy-button:focus-visible {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+body.colorscheme-dark .code-block:hover > .copy-button,
+body.colorscheme-dark .code-block > .copy-button:focus,
+body.colorscheme-dark .code-block > .copy-button:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.colorscheme-auto .code-block:hover > .copy-button,
+body.colorscheme-auto .code-block > .copy-button:focus,
+body.colorscheme-auto .code-block > .copy-button:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  body.colorscheme-auto .code-block:hover > .copy-button,
+  body.colorscheme-auto .code-block > .copy-button:focus,
+  body.colorscheme-auto .code-block > .copy-button:focus-visible {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.code-block > .copy-button .check-icon {
+  display: none;
+}
+
+.code-block > .copy-button[data-copy-state="copied"] {
+  opacity: 1;
+  color: #22c55e;
+}
+
+.code-block > .copy-button[data-copy-state="copied"] .copy-icon {
+  display: none;
+}
+
+.code-block > .copy-button[data-copy-state="copied"] .check-icon {
+  display: block;
+}

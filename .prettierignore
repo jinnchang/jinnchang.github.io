@@ -1,0 +1,22 @@
+# Hugo
+public/
+themes/
+resources/
+static/
+.hugo_build.lock
+
+# Node
+node_modules/
+package-lock.json
+
+# Husky
+.husky/
+
+# Editor / IDE
+.vscode/
+
+# Claude Code
+.claude/
+
+# Documentation
+LICENSE

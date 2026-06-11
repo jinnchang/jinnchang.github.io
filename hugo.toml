@@ -1,0 +1,79 @@
+baseURL = "https://jinnchang.github.io"
+languageCode = "en"
+title = "Jinnchang"
+theme = "hugo-coder"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+
+[markup]
+[markup.highlight]
+noClasses = false
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 4
+
+[params.Entry]
+toc = true
+tocOpen = true
+
+[params]
+author = "Jinnchang"
+avatarURL = "images/avatar.png"
+faviconSVG = "favicon.svg"
+info = ["AI Explorer", "Lifelong Learner"]
+description = "Exploring the rapidly changing AI era, rethinking life"
+license = "MIT"
+dateFormat = "2006-01-02"
+since = 2025
+colorScheme = "auto"
+hideColorSchemeToggle = false
+customSCSS = ["css/copy-code.scss"]
+customJS = ["js/copy-code.js"]
+
+[params.umami]
+siteID = "8e673205-35e8-4605-b800-eab8c5cb69d5"
+scriptURL = "https://cloud.umami.is/script.js"
+
+[params.giscus]
+repo = "jinnchang/jinnchang.github.io"
+repoID = "R_kgDOQmj_WA"
+category = "Announcements"
+categoryID = "DIC_kwDOQmj_WM4C5sCK"
+mapping = "pathname"
+reactionsEnabled = "0"
+inputPosition = "bottom"
+
+[taxonomies]
+category = "categories"
+series = "series"
+tag = "tags"
+author = "authors"
+
+[[params.social]]
+name = "Github"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/jinnchang/"
+
+[menu]
+[[menu.main]]
+name = "Posts"
+weight = 1
+url = "posts/"
+[[menu.main]]
+name = "Translations"
+weight = 2
+url = "translations/"
+[[menu.main]]
+name = "Categories"
+weight = 3
+url = "categories/"
+[[menu.main]]
+name = "Links"
+weight = 4
+url = "links/"
+[[menu.main]]
+name = "Search"
+weight = 5
+url = "search/"

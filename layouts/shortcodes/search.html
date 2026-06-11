@@ -1,0 +1,58 @@
+<link
+  href="/pagefind/pagefind-ui.css"
+  rel="stylesheet"
+/>
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<style>
+  :root {
+    --pagefind-ui-primary: #1565c0;
+    --pagefind-ui-text: #212121;
+    --pagefind-ui-background: #fafafa;
+    --pagefind-ui-border: #e0e0e0;
+  }
+
+  /* Coder dark theme support */
+  .colorscheme-dark {
+    --pagefind-ui-primary: #42a5f5;
+    --pagefind-ui-text: #dadada;
+    --pagefind-ui-background: #212121;
+    --pagefind-ui-border: #424242;
+    --pagefind-ui-tag: #424242;
+  }
+
+  /* Auto mode support */
+  @media (prefers-color-scheme: dark) {
+    .colorscheme-auto {
+      --pagefind-ui-primary: #42a5f5;
+      --pagefind-ui-text: #dadada;
+      --pagefind-ui-background: #212121;
+      --pagefind-ui-border: #424242;
+      --pagefind-ui-tag: #424242;
+    }
+  }
+
+  .pagefind-ui__result-title,
+  .pagefind-ui__result-link {
+    color: var(--pagefind-ui-primary) !important;
+  }
+
+  .pagefind-ui__result-excerpt {
+    color: var(--pagefind-ui-text) !important;
+  }
+</style>
+
+<div id="search"></div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      translations: {
+        placeholder: "Search...",
+      },
+    });
+  });
+</script>
