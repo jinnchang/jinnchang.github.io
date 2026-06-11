@@ -2,8 +2,6 @@
 
 Exploring this rapidly changing AI era, and contemplating a new life.
 
-[jinnchang.github.io](https://jinnchang.github.io)
-
 > Requires Hugo extended 0.163.0 and Node ≥ 24
 
 ## Getting Started
