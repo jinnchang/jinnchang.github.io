@@ -21,10 +21,6 @@ disableComments = false
 
 [https://deepmind.google/models/model-cards/](https://deepmind.google/models/model-cards/)
 
-## Grok
-
-[https://docs.x.ai/docs/release-notes](https://docs.x.ai/docs/release-notes)
-
 ## DeepSeek
 
 [https://api-docs.deepseek.com/zh-cn/](https://api-docs.deepseek.com/zh-cn/)
@@ -42,8 +38,6 @@ disableComments = false
 ## Kimi
 
 [https://www.kimi.com/blog/](https://www.kimi.com/blog/)
-
-[https://platform.moonshot.cn/blog/posts/changelog](https://platform.moonshot.cn/blog/posts/changelog)
 
 ## MiniMax
 
