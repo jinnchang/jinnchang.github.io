@@ -1,15 +1,13 @@
 +++
 title = 'Getting Started With Loops'
 date = '2026-06-30T20:45:11+08:00'
-draft = false
 
-description = "了解 Claude Code 团队如何定义代理循环，以及从回合制循环到目标驱动、时间驱动和主动式循环的实践指南——还有何时使用每种循环。"
+description = "Getting Started With Loops"
 categories = ["Claude Code"]
 series = ["Claude Code"]
 authors = ["Delba de Oliveira", "Michael Segner"]
 
 toc = true
-featuredImage = ""
 externalLink = ""
 canonicalUrl = "https://claude.com/blog/getting-started-with-loops"
 disableComments = false
@@ -165,8 +163,6 @@ If any step fails, fix the issue and rerun from step 1 — do not hand back part
 一旦有了想法，运行循环，观察结果——比如它在哪里卡住或过度延伸——不要害怕对它进行迭代改进。
 
 了解更多信息，请阅读 Claude Code 文档中关于[并行运行代理](https://code.claude.com/docs/en/agents)的内容，以及[循环](https://code.claude.com/docs/en/goal)、[计划](https://code.claude.com/docs/en/routines)、[目标](https://code.claude.com/docs/en/goal)和[动态工作流](https://code.claude.com/docs/en/workflows#orchestrate-subagents-at-scale-with-dynamic-workflows)页面。
-
----
 
 ## 原文链接
 
