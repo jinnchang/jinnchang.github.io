@@ -1,9 +1,5 @@
 {
-  "plugins": [
-    "prettier-plugin-go-template",
-    "prettier-plugin-toml",
-    "prettier-plugin-lint-md"
-  ],
+  "plugins": ["prettier-plugin-go-template", "prettier-plugin-toml"],
   "useTabs": false,
   "tabWidth": 2,
   "bracketSpacing": true,
@@ -13,12 +9,6 @@
       "files": ["*.html"],
       "options": {
         "parser": "go-template"
-      }
-    },
-    {
-      "files": ["*.md"],
-      "options": {
-        "parser": "markdown"
       }
     },
     {

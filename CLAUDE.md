@@ -13,8 +13,7 @@ npm run dev          # Hugo dev server with drafts (hugo server -D)
 npm run build        # Build + minify + Pagefind index (hugo --gc --minify && npx pagefind)
 npm run preview      # Serve built site locally
 npm run index        # Run Pagefind indexing only
-npm run lint         # Format check + markdown lint
-npm run lint:md      # Markdown lint only
+npm run lint         # Format check
 npm run format       # Format all files with Prettier
 npm run format:check # Check formatting without writing
 ```
@@ -31,8 +30,7 @@ npm run format:check # Check formatting without writing
 ## Conventions
 
 - **Commits**: Conventional commits enforced by commitlint + husky commit-msg hook.
-- **Formatting**: Prettier with plugins for Go templates, TOML, and markdown. Run via lint-staged on commit.
-- **Markdown**: markdownlint with MD013, MD033, MD036, MD041 disabled.
+- **Formatting**: Prettier with plugins for Go templates and TOML. Run via lint-staged on commit.
 - **Node version**: 24.14.0 (see `.nvmrc`).
 - **New content**: Always use `hugo new content <path>` — archetypes are matched by section: `posts/` → `archetypes/posts.md`, `reads/` → `archetypes/reads.md`. Example: `hugo new content posts/my-post/index.md`.
 
