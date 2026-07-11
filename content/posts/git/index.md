@@ -1,11 +1,17 @@
 +++
-date = '2026-02-05T08:50:00+08:00'
 title = 'Git'
-summary = ""
-toc = true
+date = '2026-02-05T08:50:00+08:00'
+draft = false
+
+description = "Git 版本控制系统核心概念与常用命令速查"
 categories = ["Tools"]
 series = []
+authors = []
+
+toc = true
+featuredImage = ""
 externalLink = ""
+canonicalUrl = ""
 disableComments = false
 +++
 

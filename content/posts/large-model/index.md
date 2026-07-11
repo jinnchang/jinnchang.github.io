@@ -1,11 +1,17 @@
 +++
-date = '2026-02-15T15:25:00+08:00'
 title = 'Large Language Model'
-summary = ""
-toc = true
-categories = ["AI"]
+date = '2026-02-15T15:25:00+08:00'
+draft = false
+
+description = "主流大语言模型厂商的资源与更新链接汇总"
+categories = ["LLM"]
 series = []
+authors = []
+
+toc = true
+featuredImage = ""
 externalLink = ""
+canonicalUrl = ""
 disableComments = false
 +++
 

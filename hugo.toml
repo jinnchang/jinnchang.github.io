@@ -66,13 +66,9 @@ name = "Posts"
 weight = 1
 url = "posts/"
 [[menu.main]]
-name = "Translations"
+name = "Reads"
 weight = 2
-url = "translations/"
-[[menu.main]]
-name = "Quotes"
-weight = 3
-url = "quotes/"
+url = "reads/"
 [[menu.main]]
 name = "Categories"
 weight = 4

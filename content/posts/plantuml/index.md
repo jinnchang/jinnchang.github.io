@@ -1,11 +1,17 @@
 +++
-date = '2026-03-15T11:30:00+08:00'
 title = 'PlantUML'
-summary = ""
-toc = true
+date = '2026-03-15T11:30:00+08:00'
+draft = false
+
+description = "PlantUML 时序图语法参考：参与者、箭头样式、分组、注释与生命线"
 categories = ["Tools"]
 series = []
+authors = []
+
+toc = true
+featuredImage = ""
 externalLink = ""
+canonicalUrl = ""
 disableComments = false
 +++
 
