@@ -5,10 +5,6 @@ summary = "了解 Claude Code 团队如何定义代理循环，以及从回合�
 toc = true
 categories = ["Claude Code"]
 series = ["Claude Code"]
-originalURL = "https://claude.com/blog/getting-started-with-loops"
-originalTitle = "Getting Started with Loops"
-originalAuthor = "Delba"
-originalDate = "2026-06-30"
 externalLink = ""
 disableComments = false
 +++
@@ -166,6 +162,6 @@ If any step fails, fix the issue and rerun from step 1 — do not hand back part
 
 ---
 
-## 参考
+## 原文链接
 
-- 原文链接：[https://claude.com/blog/getting-started-with-loops](https://claude.com/blog/getting-started-with-loops)
+[https://claude.com/blog/getting-started-with-loops](https://claude.com/blog/getting-started-with-loops)
