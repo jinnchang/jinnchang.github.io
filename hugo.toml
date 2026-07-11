@@ -1,9 +1,13 @@
 baseURL = "https://jinnchang.github.io"
-languageCode = "en"
 title = "Jinnchang"
 theme = "hugo-coder"
+languageCode = "en"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
+enableEmoji = false
+
+[pagination]
+pagerSize = 6
 
 [markup]
 [markup.highlight]
@@ -25,7 +29,7 @@ info = ["AI Explorer", "Lifelong Learner"]
 description = "Exploring the rapidly changing AI era, rethinking life"
 license = "MIT"
 dateFormat = "2006-01-02"
-since = 2025
+since = 2026
 colorScheme = "auto"
 hideColorSchemeToggle = false
 customSCSS = ["css/copy-code.scss"]
@@ -66,13 +70,13 @@ name = "Translations"
 weight = 2
 url = "translations/"
 [[menu.main]]
-name = "Categories"
+name = "Quotes"
 weight = 3
-url = "categories/"
+url = "quotes/"
 [[menu.main]]
-name = "Links"
+name = "Categories"
 weight = 4
-url = "links/"
+url = "categories/"
 [[menu.main]]
 name = "Search"
 weight = 5
