@@ -32,27 +32,6 @@
 .code-block > .copy-button:focus,
 .code-block > .copy-button:focus-visible {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.08);
-}
-
-body.colorscheme-dark .code-block:hover > .copy-button,
-body.colorscheme-dark .code-block > .copy-button:focus,
-body.colorscheme-dark .code-block > .copy-button:focus-visible {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-body.colorscheme-auto .code-block:hover > .copy-button,
-body.colorscheme-auto .code-block > .copy-button:focus,
-body.colorscheme-auto .code-block > .copy-button:focus-visible {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-@media (prefers-color-scheme: light) {
-  body.colorscheme-auto .code-block:hover > .copy-button,
-  body.colorscheme-auto .code-block > .copy-button:focus,
-  body.colorscheme-auto .code-block > .copy-button:focus-visible {
-    background: rgba(0, 0, 0, 0.08);
-  }
 }
 
 .code-block > .copy-button .check-icon {
