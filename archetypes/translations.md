@@ -1,15 +1,17 @@
 +++
-date = '{{ .Date }}'
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-summary = ""
-toc = true
+date = '{{ .Date }}'
+draft = false
+
+description = ""
 categories = []
 series = []
-originalURL = ""
-originalTitle = ""
-originalAuthor = ""
-originalDate = ""
+authors = []
+
+toc = true
+featuredImage = ""
 externalLink = ""
+canonicalUrl = ""
 disableComments = false
 +++
 
