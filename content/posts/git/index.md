@@ -1,15 +1,13 @@
 +++
 title = 'Git'
 date = '2026-02-05T08:50:00+08:00'
-draft = false
 
-description = "Git 版本控制系统核心概念与常用命令速查"
+description = "Git Core Concepts & Common Commands Cheat Sheet"
 categories = ["Tools"]
 series = []
 authors = []
 
 toc = true
-featuredImage = ""
 externalLink = ""
 canonicalUrl = ""
 disableComments = false
@@ -559,6 +557,6 @@ man git-config
 
 ## 参考
 
-[1] [https://git-scm.com/book/zh/v2](https://git-scm.com/book/zh/v2)
+[https://git-scm.com/book/zh/v2](https://git-scm.com/book/zh/v2)
 
-[2] [https://git-scm.com/cheat-sheet#getting-started](https://git-scm.com/cheat-sheet#getting-started)
+[https://git-scm.com/cheat-sheet#getting-started](https://git-scm.com/cheat-sheet#getting-started)

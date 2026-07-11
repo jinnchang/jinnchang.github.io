@@ -1,15 +1,13 @@
 +++
 title = 'PlantUML'
 date = '2026-03-15T11:30:00+08:00'
-draft = false
 
-description = "PlantUML 时序图语法参考：参与者、箭头样式、分组、注释与生命线"
+description = "PlantUML Sequence Diagram: Participants, Arrows, Groups, Notes, Lifelines."
 categories = ["Tools"]
 series = []
 authors = []
 
 toc = true
-featuredImage = ""
 externalLink = ""
 canonicalUrl = ""
 disableComments = false
@@ -289,4 +287,4 @@ E -> C : something else
 
 ## 参考
 
-[1] [https://plantuml.com](https://plantuml.com)
+[https://plantuml.com](https://plantuml.com)

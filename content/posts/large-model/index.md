@@ -1,15 +1,13 @@
 +++
 title = 'Large Language Model'
 date = '2026-02-15T15:25:00+08:00'
-draft = false
 
-description = "主流大语言模型厂商的资源与更新链接汇总"
+description = "a curated list of resources and update links."
 categories = ["LLM"]
 series = []
 authors = []
 
 toc = true
-featuredImage = ""
 externalLink = ""
 canonicalUrl = ""
 disableComments = false
