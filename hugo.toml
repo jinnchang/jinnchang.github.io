@@ -1,5 +1,5 @@
 baseURL = "https://jinnchang.github.io"
-title = "Jinnchang"
+title = "chang"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -32,7 +32,7 @@ dateFormat = "2006-01-02"
 since = 2026
 colorScheme = "auto"
 hideColorSchemeToggle = false
-customSCSS = ["css/copy-code.scss"]
+customSCSS = ["css/copy-code.scss", "css/fonts.scss"]
 customJS = ["js/copy-code.js"]
 
 [params.umami]
