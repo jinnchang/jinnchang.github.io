@@ -6,5 +6,9 @@ resources/
 # Node
 node_modules/
 
+# Python
+.venv/
+
 # Claude Code
 .claude/
+.cache/

@@ -1,7 +1,5 @@
 # Jinnchang
 
-Exploring this rapidly changing AI era, and contemplating a new life.
-
 > Requires Hugo extended 0.163.0 and Node ≥ 24
 
 ## Getting Started
