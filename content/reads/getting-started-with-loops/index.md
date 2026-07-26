@@ -1,5 +1,5 @@
 +++
-title = '循环工程 · 循环入门'
+title = 'Loop engineering: Getting started with loops'
 date = '2026-06-30T00:00:00+08:00'
 
 description = "使用 Anthropic 的 Claude Code 进行循环工程：设计基于轮次、目标、时间和主动式代理循环，使其运行至满足停止条件。"
@@ -13,9 +13,7 @@ canonicalUrl = "https://claude.com/blog/getting-started-with-loops"
 disableComments = false
 +++
 
-> 了解 Claude Code 团队如何定义代理循环，并获得从基于轮次到基于目标、基于时间和主动式循环的实用指导——以及何时使用每种循环。
-
----
+了解 Claude Code 团队如何定义代理循环，并获得从基于轮次到基于目标、基于时间和主动式循环的实用指导——以及何时使用每种循环。
 
 ## 循环入门
 
@@ -49,7 +47,7 @@ disableComments = false
 
 例如，在你的 SKILL.md 文件中，你可以指定：
 
-```yaml
+```plaintext
 ---
 name: verify-frontend-change
 description: Verify any UI change end-to-end before declaring it done.
@@ -87,7 +85,7 @@ If any step fails, fix the issue and rerun from step 1 — do not hand back part
 
 例如：
 
-```bash
+```plaintext
 /goal get the homepage Lighthouse score to 90 or above, stop after 5 tries.
 ```
 
@@ -102,7 +100,7 @@ If any step fails, fix the issue and rerun from step 1 — do not hand back part
 
 对于这些情况，你可以用 `/loop` 触发 Claude 的运行，它会按间隔重新运行提示词。例如：
 
-```bash
+```plaintext
 /loop 5m check my PR, address review comments, and fix failing CI
 ```
 
@@ -128,7 +126,7 @@ If any step fails, fix the issue and rerun from step 1 — do not hand back part
 
 组合起来，提示词可能如下：
 
-```bash
+```plaintext
 /schedule every hour: check #project-feedback for bug reports. /goal: don't stop until every report found this run is triaged, actioned, and responded to. When fixing a bug, use a workflow to explore three solutions in parallel worktrees and have a judge adversarially review them.
 ```
 
