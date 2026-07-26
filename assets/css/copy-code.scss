@@ -2,6 +2,15 @@
   position: relative;
 }
 
+/* Auto-wrap code blocks instead of scrolling */
+.code-block .highlight div,
+.code-block .highlight pre,
+pre {
+  overflow-x: visible;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .code-block > .copy-button {
   position: absolute;
   top: 0.5rem;
