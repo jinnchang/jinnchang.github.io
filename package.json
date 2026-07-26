@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "hugo server -D",
+    "lint": "prettier --check .",
     "prepare": "husky"
   },
   "devDependencies": {
