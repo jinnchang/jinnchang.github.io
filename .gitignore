@@ -10,7 +10,5 @@ node_modules/
 .venv/
 
 # Claude Code
-.claude/*
-!.claude/skills/
-!.claude/skills/**
+.claude/
 .cache/
