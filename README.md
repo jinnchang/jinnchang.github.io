@@ -1,14 +1,8 @@
 # Jinnchang
 
-> Requires Hugo extended 0.163.0 and Node ≥ 24
+> Requires Hugo extended 0.163.0 and Node ≥ 22
 
 ## Getting Started
-
-### Install dependencies
-
-```bash
-npm install
-```
 
 ### Initialize theme submodule
 
