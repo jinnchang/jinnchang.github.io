@@ -19,7 +19,7 @@ git submodule update --init --recursive
 ### Start local development server
 
 ```bash
-npm run dev
+hugo server -D
 ```
 
 ---

@@ -4,54 +4,55 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal blog built with Hugo (extended) using the hugo-coder theme (git submodule). Deployed to GitHub Pages at `https://jinnchang.github.io`. Content is primarily Simplified Chinese. Two content sections: **posts** (original articles) and **reads** (translated articles from English sources).
+Personal blog built with Hugo (extended ≥ 0.163.0) using the [hugo-coder](https://github.com/luizdepra/hugo-coder) theme (git submodule). Deployed to GitHub Pages at `https://jinnchang.github.io`. Content is written in Chinese.
 
 ## Commands
 
 ```bash
-npm run dev          # Local dev server (hugo server -D, includes drafts)
-npm run lint         # Check formatting (prettier --check .)
-npm run prepare      # Install husky git hooks
-hugo build --gc --minify --baseURL <url>  # Production build
-npx pagefind --site public                # Build search index (run after hugo build)
+# Local development
+hugo server -D                     # Serve with drafts visible at localhost:1313
+
+# Production build (two-step: Hugo then Pagefind search index)
+hugo build --gc --minify --baseURL https://jinnchang.github.io
+npx pagefind --site public
+
+# Create new content
+hugo new content posts/<slug>/index.md
+hugo new content reads/<slug>/index.md
+
+# Theme submodule (required after clone)
+git submodule update --init --recursive
 ```
-
-## Requirements
-
-- **Hugo Extended** 0.163.0 (required for SCSS)
-- **Node.js** 24.14.0 (see `.nvmrc`)
-- **Dart Sass** 1.98.0 (CI installs this; needed locally if Hugo can't find sass)
 
 ## Architecture
 
-### Content & Layouts
+### Content Sections
 
-All content uses **Hugo page bundles** (`content/<section>/<slug>/index.md` + co-located images). The `reads/` section has custom layouts (`layouts/reads/`) that support `externalLink` and `canonicalUrl` frontmatter for translated articles. Theme layouts are overridden by placing files in `layouts/` — the theme itself lives in `themes/hugo-coder/` as a git submodule and should not be edited directly.
+- **`content/posts/`** — Original articles. Page bundles: `<slug>/index.md` + co-located images.
+- **`content/reads/`** — Translated/sourced articles. Same page-bundle structure. Supports `externalLink` (routes clicks to the original source) and `canonicalUrl` (SEO). `disableComments: true` suppresses Giscus on link-only entries.
 
-### Custom Assets
+Both sections share the same archetype frontmatter (TOML `+++` delimiters) with fields: `title`, `date`, `description`, `categories`, `series`, `authors`, `toc`, `externalLink`, `canonicalUrl`, `disableComments`.
 
-Three custom assets loaded via `hugo.toml` params:
+### Layout Overrides
 
-- `assets/css/copy-code.scss` + `assets/js/copy-code.js` — clipboard copy button on code blocks (wired through `layouts/_default/_markup/render-codeblock.html`)
-- `assets/css/fonts.scss` — custom font stack and base sizes
+Custom layouts in `layouts/` override the theme and are the primary way to customize — never edit `themes/hugo-coder/` directly.
+
+- **`layouts/_default/_markup/render-codeblock.html`** — Replaces theme's code block rendering. Wraps every fenced code block in a `<div class="code-block">` with a copy button (SVG icons). This is the hook that enables the copy-code feature.
+- **`layouts/reads/`** — Custom list/li/single templates for the reads section. `li.html` links to `externalLink` when present, otherwise `RelPermalink`.
+- **`layouts/shortcodes/search.html`** — Pagefind search UI with light/dark theme CSS variables.
+
+### Copy-Code Feature (3 files, tightly coupled)
+
+1. `layouts/_default/_markup/render-codeblock.html` — HTML structure with `.copy-button` and `data-copy-state`
+2. `assets/css/copy-code.scss` — Button positioning, hover states, icon swap via `data-copy-state="copied"`, auto-wrap (`white-space: pre-wrap`) instead of horizontal scroll
+3. `assets/js/copy-code.js` — Click handler: copies `pre code` text, sets `data-copy-state="copied"` for 1.5s
+
+### Asset Pipeline
+
+Hugo pipes files from `assets/` (not `static/`). Custom SCSS and JS are declared in `hugo.toml` under `params.customSCSS` and `params.customJS`. Fonts are overridden via `assets/css/fonts.scss`.
 
 ### Integrations
 
-- **Pagefind**: static search; index built post-build with `npx pagefind --site public`, UI via `layouts/shortcodes/search.html`
-- **Giscus**: comments on reads/posts, configured in `[params.giscus]`
-- **Umami**: analytics, configured in `[params.umami]`
-
-### Frontmatter (Archetypes)
-
-Both `posts` and `reads` archetypes share the same TOML structure. Key fields beyond standard Hugo:
-
-- `toc` (default true) — table of contents
-- `externalLink` — for reads linking to original source
-- `canonicalUrl` — original article URL for SEO
-- `disableComments` — toggle Giscus
-
-## Git Conventions
-
-- **Commit style**: Conventional commits enforced by commitlint (`@commitlint/config-conventional`)
-- **Pre-commit**: lint-staged runs prettier on `*.{html,toml,js,scss,json,yaml,yml,md}`
-- **Theme submodule**: after cloning, run `git submodule update --init --recursive`
+- **Pagefind** — Search index built post-Hugo (`npx pagefind --site public`). UI loaded from `/pagefind/` in the search shortcode.
+- **Giscus** — Comments via GitHub Discussions, configured in `hugo.toml` `[params.giscus]`.
+- **Umami** — Privacy-friendly analytics, configured in `hugo.toml` `[params.umami]`.

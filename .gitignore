@@ -3,9 +3,6 @@ public/
 resources/
 .hugo_build.lock
 
-# Node
-node_modules/
-
 # Python
 .venv/
 
