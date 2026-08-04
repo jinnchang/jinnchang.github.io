@@ -10,6 +10,9 @@ enableEmoji = false
 pagerSize = 6
 
 [markup]
+[markup.goldmark.renderer]
+unsafe = true
+
 [markup.highlight]
 noClasses = false
 
