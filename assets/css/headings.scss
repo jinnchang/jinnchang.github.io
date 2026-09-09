@@ -1,0 +1,15 @@
+/* Heading colors — reference: Obsidian Minimal "Colorful headings" */
+body.colorscheme-light .post-content h2,
+body.colorscheme-dark .post-content h2 {
+  color: #d5763f; /* Minimal: --orange */
+}
+
+body.colorscheme-light .post-content h3,
+body.colorscheme-dark .post-content h3 {
+  color: #e5b567; /* Minimal: --yellow */
+}
+
+body.colorscheme-light .post-content h4,
+body.colorscheme-dark .post-content h4 {
+  color: #a8c373; /* Minimal: --green */
+}
