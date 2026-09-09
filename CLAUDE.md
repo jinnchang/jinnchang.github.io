@@ -56,3 +56,17 @@ Hugo pipes files from `assets/` (not `static/`). Custom SCSS and JS are declared
 - **Pagefind** — Search index built post-Hugo (`npx pagefind --site public`). UI loaded from `/pagefind/` in the search shortcode.
 - **Giscus** — Comments via GitHub Discussions, configured in `hugo.toml` `[params.giscus]`.
 - **Umami** — Privacy-friendly analytics, configured in `hugo.toml` `[params.umami]`.
+
+## Writing Style
+
+**本文件约束 `content/posts/`（原创文章）的中文写作，目标是让 AI 协作产出「聚焦、不啰嗦、重点突出」。`content/reads/`（翻译）追求精准还原原文，不受本文件约束。**
+
+- 脚手架过渡句：删掉「接下来我们将…」「综上所述」「值得一提的是」「需要注意的是」。
+- 同义反复：同一结论不要在开头、正文、结尾各说一遍；只在一处完整陈述，其余用一句指代。
+- 套话与免责：「在当今这个时代…」「众所周知…」及无信息的免责声明，删。
+- 背景/趋势铺垫：仅当删掉后读者会读不懂时保留 1–2 句；与技术结论无关的行业口水务必砍。
+- 名词堆砌：一句话超过三个并列术语且不加解释，拆分或砍掉一部分。
+- 长度：能短则短，每一句都要有信息量。
+- 开头：建议用 1–3 句点题（解决什么问题 / 给谁看），非强制。
+- 标题层级、小结构、结尾措辞、署名格式：不作硬性规定，按内容灵活处理。
+- 面向技术向中文读者；避开「本篇文章、我们公司」这类翻译腔。
