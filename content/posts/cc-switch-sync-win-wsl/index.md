@@ -13,7 +13,7 @@ canonicalUrl = ""
 disableComments = false
 +++
 
-Windows 和 WSL 是两套环境，Claude Code 的配置天然各自独立，默认互不相干：
+Windows 和 WSL 是两套环境，Claude Code 的配置各管各的：
 
 - CC Switch 在 Windows 上写的是 `C:\Users\<User>\.claude\settings.json`
 - WSL 里的 Claude Code 读的却是 `~/.claude/settings.json`
@@ -24,7 +24,7 @@ Windows 和 WSL 是两套环境，Claude Code 的配置天然各自独立，默�
 
 最直接的思路是把整个配置目录打通，比如在 WSL 里设 `CLAUDE_CONFIG_DIR=/mnt/c/Users/<User>/.claude`。它能生效，但搬走的是整个目录：`settings.json`、`.claude.json`、plugins、skills、会话记录全都会被共享，远超想要的粒度。
 
-所以目标就一句：只让 `settings.json` 一个文件在两边打通。下面两种做法都精确做到，区别只在「谁当写者、文件物理上住在哪」。
+所以目标就是：只让 `settings.json` 一个文件在两边打通。下面两种做法都能做到，区别只在谁当写者、文件物理上住在哪。
 
 ## 方案 A：单文件软链（写走 Windows，读走 WSL）
 
@@ -40,7 +40,7 @@ ln -s /mnt/c/Users/<User>/.claude/settings.json ~/.claude/settings.json
 
 ## 方案 B：CC Switch 直接写 WSL（配置留在 WSL）
 
-`settings.json` 物理上留在 WSL，把 CC Switch 的写入目标指到 WSL 目录。CC Switch 的切换动作本来只写 `settings.json`，天然不碰 transcripts、skills。
+`settings.json` 物理上留在 WSL，把 CC Switch 的写入目标指到 WSL 目录。CC Switch 的切换动作本来只写 `settings.json`，不碰 transcripts、skills。
 
 先在 WSL 里拿到 Windows 能识别的 UNC 路径：
 
@@ -64,4 +64,4 @@ wslpath -w ~/.claude
 | Windows 原生和 WSL 都跑 Claude Code | A（配置留 Windows，两边都读得到） |
 | 只在 WSL 用，且希望配置物理留在 WSL | B |
 
-一句话对照：方案 A 写入走 Windows 原生、更稳，代价是一个跨文件系统软链；方案 B 配置落在 WSL、零软链，代价是依赖版本和 WSL 运行态。
+方案 A 写入走 Windows 原生、更稳，代价是一个跨文件系统软链；方案 B 配置落在 WSL、零软链，代价是依赖版本和 WSL 运行态。
