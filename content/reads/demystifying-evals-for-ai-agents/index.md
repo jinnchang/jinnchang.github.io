@@ -1,5 +1,5 @@
 +++
-title = '揭开 AI Agent 评估的面纱'
+title = 'Demystifying evals for AI agents'
 date = '2026-01-09T00:00:00+08:00'
 
 description = "让 Agent 有用的能力，也让它们难以评估。跨部署场景有效的策略，是将多种技术组合起来，以匹配其所衡量系统的复杂性。"

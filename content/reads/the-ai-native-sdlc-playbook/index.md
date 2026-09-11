@@ -1,10 +1,10 @@
 +++
-title = 'AI 原生 SDLC 实战指南'
+title = 'The AI-Native SDLC playbook'
 date = '2026-08-21T00:00:00+08:00'
 
 description = "Anthropic 面向 AI 原生 SDLC 的分阶段实战指南 · 团队如何用 Claude 规划、设计、构建、测试、部署和维护软件。"
-categories = ["Claude Code"]
-series = []
+categories = ["AI Coding"]
+series = ["SDLC"]
 authors = ["Louis Claxton"]
 
 toc = true

@@ -1,10 +1,10 @@
 +++
-title = '构建高效的 AI Agent'
+title = 'Building effective agents'
 date = '2024-12-19T00:00:00+08:00'
 
 description = "了解 Anthropic 如何构建可靠的 AI Agent。本文涵盖我们在 Agent 能力、安全性考量以及构建可信 AI 的技术框架方面的研究。"
 categories = ["Agent"]
-series = []
+series = ["Agent"]
 authors = ["Erik S", "Barry Zhang"]
 
 toc = true

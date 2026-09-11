@@ -1,9 +1,9 @@
 +++
-title = '构建 Claude Code 的经验 · 我们如何使用 Skill'
+title = 'Lessons from building Claude Code: How we use skills'
 date = '2026-06-03T00:00:00+08:00'
 
 description = "我们在 Anthropic 内部构建和扩展数百个 Skill 过程中学到的经验。"
-categories = ["Claude Code"]
+categories = ["Skills"]
 series = ["Skills"]
 authors = ["Thariq Shihipar"]
 

@@ -3,7 +3,7 @@ title = 'Loop engineering: Getting started with loops'
 date = '2026-06-30T00:00:00+08:00'
 
 description = "用 Anthropic 的 Claude Code 进行 Loop 工程化：设计轮次型、目标型、时间型和主动型 Agent Loop，让它们运行到满足停止条件。"
-categories = ["Agent"]
+categories = ["AI Coding"]
 series = ["Loop Engineering"]
 authors = ["Delba de Oliveira", "Michael Segner"]
 
