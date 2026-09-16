@@ -1,0 +1,32 @@
+{{- $name := .Get 0 -}}
+{{- $path := path.Join "content" .Page.File.Dir $name -}}
+{{- if fileExists $path -}}
+  {{- $html := os.ReadFile $path -}}
+  {{- $svg := findRE "(?s)<svg[^>]*>.*?</svg>" $html -}}
+  {{- if $svg -}}
+    {{- $s := index $svg 0 -}}
+    {{- /* derive a stable per-file prefix from the filename stem */ -}}
+    {{- $slug := replaceRE `(?i)\.html?$` "" $name | replaceRE `[^a-zA-Z0-9_-]+` "-" -}}
+
+    {{- /* snapshot the title/desc ids before namespacing so aria-labelledby can be rewired */ -}}
+    {{- $titleSub := findRESubmatch `id="([A-Za-z0-9_-]+-title)"` $s 1 -}}
+    {{- $descSub  := findRESubmatch `id="([A-Za-z0-9_-]+-desc)"`  $s 1 -}}
+    {{- $oldTitle := "" -}}{{- if $titleSub -}}{{- $oldTitle = index $titleSub 0 1 -}}{{- end -}}
+    {{- $oldDesc  := "" -}}{{- if $descSub  -}}{{- $oldDesc  = index $descSub  0 1 -}}{{- end -}}
+
+    {{- /* namespace every id + url(# reference (markers, patterns, title, desc) */ -}}
+    {{- $s = replace $s `id="` (printf `id="%s-` $slug) -}}
+    {{- $s = replace $s `url(#` (printf `url(#%s-` $slug) -}}
+
+    {{- /* rewire the two aria-labelledby tokens to the now-prefixed title/desc ids */ -}}
+    {{- if and $oldTitle $oldDesc -}}
+      {{- $s = replace $s (printf "%s %s" $oldTitle $oldDesc) (printf "%s-%s %s-%s" $slug $oldTitle $slug $oldDesc) -}}
+    {{- end -}}
+
+    <div class="diagram">{{ $s | safeHTML }}</div>
+  {{- else -}}
+    {{- errorf "diagram shortcode: no <svg> found in %s" $path -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf "diagram shortcode: %s not found (looked for %s)" $name $path -}}
+{{- end -}}

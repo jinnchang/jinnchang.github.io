@@ -1,0 +1,83 @@
+/* =====================================================================
+   Diagram dark re-skin — exact palette remap (no filter approximation).
+
+   The stock diagram-design SVG uses a fixed palette (paper #f5f5f5,
+   ink #2d3142, muted #4f5d75, accent #eb6c36, link #2e5aa8, plus
+   rgba hairlines/fills). In dark mode we remap each exact value to its
+   designed dark counterpart so the diagram matches this blog's dark
+   palette (#212121 / #dadada), rather than inverting the whole thing.
+
+   Scoped to .diagram so it never leaks into the rest of the page.
+   ===================================================================== */
+
+.diagram svg { width: 100%; height: auto; display: block; }
+
+@mixin diagram-dark {
+  .diagram svg [fill="#f5f5f5"]            { fill:   #212121; }
+  .diagram svg [stroke="#f5f5f5"]          { stroke: #212121; }
+
+  .diagram svg [fill="#ececec"]            { fill:   #2a2a2a; }
+  .diagram svg [stroke="#ececec"]          { stroke: #2a2a2a; }
+
+  .diagram svg [fill="#ffffff"]            { fill:   #2a2a2a; }
+  .diagram svg [stroke="#ffffff"]          { stroke: #2a2a2a; }
+
+  .diagram svg [fill="#2d3142"]            { fill:   #dadada; }
+  .diagram svg [stroke="#2d3142"]          { stroke: #dadada; }
+
+  .diagram svg [fill="#4f5d75"]            { fill:   #9a9a9a; }
+  .diagram svg [stroke="#4f5d75"]          { stroke: #9a9a9a; }
+
+  .diagram svg [fill="#7a8399"]            { fill:   #8a8a8a; }
+  .diagram svg [stroke="#7a8399"]          { stroke: #8a8a8a; }
+
+  .diagram svg [fill="#bfc0c0"]            { fill:   rgba(191,192,192,0.40); }
+  .diagram svg [stroke="#bfc0c0"]          { stroke: rgba(191,192,192,0.40); }
+
+  .diagram svg [fill="#eb6c36"]            { fill:   #f08a59; }
+  .diagram svg [stroke="#eb6c36"]          { stroke: #f08a59; }
+
+  .diagram svg [fill="#2e5aa8"]            { fill:   #6a95d8; }
+  .diagram svg [stroke="#2e5aa8"]          { stroke: #6a95d8; }
+
+  .diagram svg [fill="rgba(45,49,66,0.02)"]  { fill:   rgba(218,218,218,0.03); }
+  .diagram svg [stroke="rgba(45,49,66,0.02)"]{ stroke: rgba(218,218,218,0.03); }
+  .diagram svg [fill="rgba(45,49,66,0.03)"]  { fill:   rgba(218,218,218,0.04); }
+  .diagram svg [stroke="rgba(45,49,66,0.03)"]{ stroke: rgba(218,218,218,0.04); }
+  .diagram svg [fill="rgba(45,49,66,0.05)"]  { fill:   rgba(218,218,218,0.06); }
+  .diagram svg [stroke="rgba(45,49,66,0.05)"]{ stroke: rgba(218,218,218,0.06); }
+  .diagram svg [fill="rgba(45,49,66,0.06)"]  { fill:   rgba(218,218,218,0.06); }
+  .diagram svg [stroke="rgba(45,49,66,0.06)"]{ stroke: rgba(218,218,218,0.06); }
+  .diagram svg [fill="rgba(45,49,66,0.10)"]  { fill:   rgba(218,218,218,0.14); }
+  .diagram svg [stroke="rgba(45,49,66,0.10)"]{ stroke: rgba(218,218,218,0.14); }
+  .diagram svg [fill="rgba(45,49,66,0.12)"]  { fill:   rgba(218,218,218,0.14); }
+  .diagram svg [stroke="rgba(45,49,66,0.12)"]{ stroke: rgba(218,218,218,0.14); }
+  .diagram svg [fill="rgba(45,49,66,0.20)"]  { fill:   rgba(218,218,218,0.20); }
+  .diagram svg [stroke="rgba(45,49,66,0.20)"]{ stroke: rgba(218,218,218,0.20); }
+  .diagram svg [fill="rgba(45,49,66,0.22)"]  { fill:   rgba(218,218,218,0.24); }
+  .diagram svg [stroke="rgba(45,49,66,0.22)"]{ stroke: rgba(218,218,218,0.24); }
+  .diagram svg [fill="rgba(45,49,66,0.30)"]  { fill:   rgba(218,218,218,0.30); }
+  .diagram svg [stroke="rgba(45,49,66,0.30)"]{ stroke: rgba(218,218,218,0.30); }
+  .diagram svg [fill="rgba(79,93,117,0.10)"]  { fill:   rgba(154,154,154,0.14); }
+  .diagram svg [stroke="rgba(79,93,117,0.10)"]{ stroke: rgba(154,154,154,0.14); }
+  .diagram svg [fill="rgba(122,131,153,0.40)"]  { fill:   rgba(138,138,138,0.40); }
+  .diagram svg [stroke="rgba(122,131,153,0.40)"]{ stroke: rgba(138,138,138,0.40); }
+  .diagram svg [fill="rgba(235,108,54,0.05)"]  { fill:   rgba(240,138,89,0.10); }
+  .diagram svg [stroke="rgba(235,108,54,0.05)"]{ stroke: rgba(240,138,89,0.10); }
+  .diagram svg [fill="rgba(235,108,54,0.08)"]  { fill:   rgba(240,138,89,0.10); }
+  .diagram svg [stroke="rgba(235,108,54,0.08)"]{ stroke: rgba(240,138,89,0.10); }
+  .diagram svg [fill="rgba(235,108,54,0.50)"]  { fill:   rgba(240,138,89,0.50); }
+  .diagram svg [stroke="rgba(235,108,54,0.50)"]{ stroke: rgba(240,138,89,0.50); }
+}
+
+/* Manual dark toggle */
+body.colorscheme-dark {
+  @include diagram-dark;
+}
+
+/* Auto mode: follow the OS */
+@media (prefers-color-scheme: dark) {
+  body.colorscheme-auto {
+    @include diagram-dark;
+  }
+}

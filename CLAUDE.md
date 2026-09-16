@@ -40,12 +40,19 @@ Custom layouts in `layouts/` override the theme and are the primary way to custo
 - **`layouts/_default/_markup/render-codeblock.html`** — Replaces theme's code block rendering. Wraps every fenced code block in a `<div class="code-block">` with a copy button (SVG icons). This is the hook that enables the copy-code feature.
 - **`layouts/reads/`** — Custom list/li/single templates for the reads section. `li.html` links to `externalLink` when present, otherwise `RelPermalink`.
 - **`layouts/shortcodes/search.html`** — Pagefind search UI with light/dark theme CSS variables.
+- **`layouts/shortcodes/diagram.html`** — Inlines a co-located SVG/HTML diagram into the page, namespaces its SVG `id`s, and enables dark-mode re-skinning (see Diagram Shortcode below).
 
 ### Copy-Code Feature (3 files, tightly coupled)
 
 1. `layouts/_default/_markup/render-codeblock.html` — HTML structure with `.copy-button` and `data-copy-state`
 2. `assets/css/copy-code.scss` — Button positioning, hover states, icon swap via `data-copy-state="copied"`, auto-wrap (`white-space: pre-wrap`) instead of horizontal scroll
 3. `assets/js/copy-code.js` — Click handler: copies `pre code` text, sets `data-copy-state="copied"` for 1.5s
+
+### Diagram Shortcode (3 files, tightly coupled)
+
+1. `layouts/shortcodes/diagram.html` — `{{< diagram <file>.svg >}}` reads a file path-joined to `content/<page-dir>/` via `os.ReadFile`, extracts the first `<svg>`, prefixes every `id` and `url(#…)` with a per-file slug (so multiple diagrams on one page don't collide), rewires `aria-labelledby` to the prefixed title/desc ids, and wraps it in `<div class="diagram">`. Missing file or no `<svg>` triggers an `errorf` (build fails).
+2. `assets/css/diagram.scss` — Dark-mode re-skin scoped to `.diagram`: remaps each exact fill/stroke value (paper, ink, muted, accent, link, plus rgba hairlines) to its designed dark counterpart instead of a whole-SVG `filter: invert`, matching the blog palette under both `body.colorscheme-dark` and `body.colorscheme-auto` (follows OS).
+3. `hugo.toml` — registered under `params.customSCSS` as `css/diagram.scss`.
 
 ### Asset Pipeline
 

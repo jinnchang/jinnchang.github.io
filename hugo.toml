@@ -35,7 +35,7 @@ dateFormat = "2006-01-02"
 since = 2026
 colorScheme = "auto"
 hideColorSchemeToggle = false
-customSCSS = ["css/copy-code.scss", "css/fonts.scss", "css/headings.scss"]
+customSCSS = ["css/copy-code.scss", "css/fonts.scss", "css/headings.scss", "css/diagram.scss"]
 customJS = ["js/copy-code.js"]
 
 [params.umami]
