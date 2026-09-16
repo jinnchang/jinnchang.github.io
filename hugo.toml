@@ -7,7 +7,7 @@ enableRobotsTXT = true
 enableEmoji = false
 
 [pagination]
-pagerSize = 6
+pagerSize = 10
 
 [markup]
 [markup.goldmark.renderer]
